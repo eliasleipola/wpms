@@ -1,20 +1,24 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import {Platform, SafeAreaView, StyleSheet} from 'react-native';
+import {StatusBar} from 'expo-status-bar';
+import List from './components/List';
 
-export default function App() {
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <>
+      <SafeAreaView style={styles.droidSafeArea}>
+        <List></List>
+        <StatusBar style="auto" />
+      </SafeAreaView>
+    </>
   );
-}
+};
 
 const styles = StyleSheet.create({
-  container: {
+  droidSafeArea: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    paddingTop: Platform.OS === 'android' ? 30 : 0,
   },
 });
+
+export default App;
