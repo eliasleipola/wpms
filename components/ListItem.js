@@ -23,7 +23,7 @@ const ListItem = (props) => {
 const styles = StyleSheet.create({
   row: {
     flexDirection: 'row',
-    backgroundColor: '#ccc',
+    backgroundColor: '#ff9933',
     marginBottom: 10,
   },
   box: {
@@ -32,10 +32,13 @@ const styles = StyleSheet.create({
   },
   image: {
     flex: 1,
+    borderRadius: 200 / 2,
   },
   listTitle: {
     fontWeight: 'bold',
-    fontSize: 20,
+    fontFamily: 'sans-serif',
+    fontSize: 25,
+    color: '#E0E0E0',
     paddingBottom: 15,
   },
 });
