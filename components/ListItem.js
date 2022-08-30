@@ -3,9 +3,14 @@ import PropTypes from 'prop-types';
 
 const ListItem = (props) => {
   const mediaUrl = 'https://media.mw.metropolia.fi/wbma/uploads/';
-  console.log(props.singleMedia);
+  console.log('ListItem', props.singleMedia);
   return (
-    <TouchableOpacity style={styles.row}>
+    <TouchableOpacity
+      style={styles.row}
+      onPress={() => {
+        props.navigation.navigate('Single', props.singleMedia);
+      }}
+    >
       <View style={styles.box}>
         <Image
           style={styles.image}
@@ -42,6 +47,7 @@ const styles = StyleSheet.create({
 
 ListItem.propTypes = {
   singleMedia: PropTypes.object,
+  navigation: PropTypes.object,
 };
 
 export default ListItem;
